@@ -1,74 +1,27 @@
-import "./App.css";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import { Task1 } from "./Components/Task1";
 import { useState } from "react";
-
+import "./App.css";
+import { AutoCounter } from "./Components/AutoCounter";
+import { Child } from "./Components/Child";
+import { Counter1 } from "./Components/counter1";
+import { Fetch } from "./Components/Fetch";
+import { TodoWithCancel } from "./Components/TodoWithCancel";
 function App() {
-  const postalData = {
-    postalCode: [
-      {
-        city: "Dresden",
-        postalcode: "01156",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Ockerwitz",
-        postalcode: "01157",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz",
-        postalcode: "01158",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Altfranken",
-        postalcode: "01159",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Gompitz",
-        postalcode: "01160",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Unkersdorf",
-        postalcode: "01161",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Pennrich",
-        postalcode: "01162",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Roitzsch",
-        postalcode: "01163",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Zöllmen",
-        postalcode: "01164",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Steinbach",
-        postalcode: "01165",
-        postalCodeType: "UNKNOWN",
-      },
-    ],
+  const [text, setText] = useState("");
+  const passText = () => {
+    setText("Hello...!");
   };
-
-  const [postalInfo, setPostalInfoy] = useState(postalData);
-
   return (
     <div className="App">
-      <Container maxWidth="xl" style={{ padding: "0px" }}>
-        <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }}>
-          <Task1 post={postalInfo} />
-        </Box>
-      </Container>
+      <Counter1 />
+      <p>-------------------------------</p>
+      <TodoWithCancel />
+      <p>-------------------------------</p>
+      <Child passText={passText} setText={setText} />
+      <h3>text: {text}</h3>
+      <p>-------------------------------</p>
+      <AutoCounter />
+      <p>-------------------------------</p>
+      <Fetch />
     </div>
   );
 }
