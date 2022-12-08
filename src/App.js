@@ -1,72 +1,26 @@
 import "./App.css";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { Task1 } from "./Components/Task1";
 import { useState } from "react";
+import { Child } from "./Components/Child";
+import { Child1 } from "./Components/Child1";
+import { Input } from "./Components/Input";
 
 function App() {
-  const postalData = {
-    postalCode: [
-      {
-        city: "Dresden",
-        postalcode: "01156",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Ockerwitz",
-        postalcode: "01157",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz",
-        postalcode: "01158",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Altfranken",
-        postalcode: "01159",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Gompitz",
-        postalcode: "01160",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Unkersdorf",
-        postalcode: "01161",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Pennrich",
-        postalcode: "01162",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Roitzsch",
-        postalcode: "01163",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Zöllmen",
-        postalcode: "01164",
-        postalCodeType: "UNKNOWN",
-      },
-      {
-        city: "Dresden Gompitz, Steinbach",
-        postalcode: "01165",
-        postalCodeType: "UNKNOWN",
-      },
-    ],
-  };
+  const [val, setVal] = useState(0);
 
-  const [postalInfo, setPostalInfoy] = useState(postalData);
+  const sum = (num) => {
+    setVal(num);
+  };
 
   return (
     <div className="App">
       <Container maxWidth="xl" style={{ padding: "0px" }}>
         <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }}>
-          <Task1 post={postalInfo} />
+          {/* <Child value={val} sum={sum} /> */}
+          {/* value is: {val !== 0 ? val : 0} */}
+          {/* <Child1 val={val} /> */}
+          <Input />
         </Box>
       </Container>
     </div>
